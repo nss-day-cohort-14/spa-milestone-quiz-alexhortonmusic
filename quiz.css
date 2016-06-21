@@ -1,0 +1,59 @@
+body {
+	font-family: 'Muli', sans-serif;
+	box-sizing: border-box;
+}
+
+/*----------------------
+----------Nav----
+------------------------*/
+
+
+
+/*----------------------
+----------Car Cards----
+------------------------*/
+.carCard {
+	margin-bottom: 20px;
+	padding: 8px;
+}
+
+.car-title {
+	text-align: center;
+}
+
+.carCard h3 {
+	text-align: center;
+	color: red;
+}
+
+
+/*-----Card Border-----*/
+
+.FireBrick {
+	border: 2px solid firebrick;
+}
+
+.Blue {
+	border: 2px solid blue;
+}
+
+.Yellow {
+	border: 2px solid yellow;
+}
+
+.Black {
+	border: 2px solid black;
+}
+
+.Red {
+	border: 2px solid red;
+}
+
+.Gray {
+	border: 2px solid gray;
+}
+
+
+.borderThick {
+	border: 2px;
+}
