@@ -7,7 +7,7 @@
       "price": "8,999",
       "color": "FireBrick",
       "purchased": false,
-      "description": "This is an immaculate 2006 Nissan Rogue with only 25000 miles on it. Leather seats, power everything."
+      "description": "This is an immaculate 2006 Nissan Rogue with only 25,000 miles on it. Leather seats, power everything."
     },
     {
       "make": "Geo",
@@ -16,7 +16,7 @@
       "price": "2,500",
       "color": "Blue",
       "purchased": false,
-      "description": "Only has 40,000 miles on it, but that's mostly due to the fact it hasn't started in 15 years!"
+      "description": "Only has 40,000 miles on it, but that's mostly due to the fact it hasn't started in 20 years!"
     },
     {
       "make": "Volkswagen",
@@ -24,7 +24,7 @@
       "year": "2007",
       "price": "4,500",
       "color": "Yellow",
-      "purchased": false,
+      "purchased": true,
       "description": "This bad boy has all the edge you'll need out there on the streets. Flower holder included."
     },
     {
@@ -42,7 +42,7 @@
       "year": "1992",
       "price": "500",
       "color": "Red",
-      "purchased": false,
+      "purchased": true,
       "description": "Has a broken cd player that was installed wrong. Oops."
     },
     {

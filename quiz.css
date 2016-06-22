@@ -1,10 +1,11 @@
 body {
 	font-family: 'Muli', sans-serif;
+	padding: 0;
 	box-sizing: border-box;
 }
 
 /*----------------------
-----------Nav----
+----------Nav-----------
 ------------------------*/
 
 
@@ -12,8 +13,13 @@ body {
 /*----------------------
 ----------Car Cards----
 ------------------------*/
+
+.top-row {
+	margin:;
+}
+
 .carCard {
-	margin-bottom: 20px;
+	margin-top: 20px;
 	padding: 8px;
 }
 
@@ -30,30 +36,31 @@ body {
 /*-----Card Border-----*/
 
 .FireBrick {
-	border: 2px solid firebrick;
+	border: 1.5px solid firebrick;
 }
 
 .Blue {
-	border: 2px solid blue;
+	border: 1.5px solid blue;
 }
 
 .Yellow {
-	border: 2px solid yellow;
+	border: 1.5px solid yellow;
 }
 
 .Black {
-	border: 2px solid black;
+	border: 1.5px solid black;
 }
 
 .Red {
-	border: 2px solid red;
+	border: 1.5px solid red;
 }
 
 .Gray {
-	border: 2px solid gray;
+	border: 1.5px solid gray;
 }
 
 
 .borderThick {
-	border: 2px;
+	border: 2px solid black;
+	background: lightblue;
 }

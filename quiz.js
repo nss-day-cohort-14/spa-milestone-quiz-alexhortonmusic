@@ -17,55 +17,52 @@ function executeIfFileFailsToLoad () {
 function carsToDOM (carsJSON) {
 	var counter = 0;
 	for (var i = 0; i < carsJSON.cars.length; i++) {
-		counter++;
-		var currentCar = carsJSON.cars[i];
-		var carMake = currentCar.make;
-		var carModel = currentCar.model;
-		var carYear = currentCar.year;
-		var carPrice = currentCar.price;
-		var carColor = currentCar.color;
-		var carStatus = currentCar.purchased;
-		var carInfo = currentCar.description;
-
+		var carStatus = carsJSON.cars[i].purchased;
 		if (carStatus === false) {
-			carStatus = "For Sale";
+			carStatus = "For Sale"
 		} else {
-			carStatus = "Sold";
+			carStatus = "Sold"
 		}
 
-		topRow.innerHTML += `
+		var carCard = `
 			<div class="col-md-4">
-				<div class="carCard ${carColor}">
-					<h2 class="car-title">${carMake} ${carModel}</h2>
-					<h3>Only $${carPrice}!</h3>
-					<h4>Year: ${carYear}</h4>
-					<h4>Color: ${carColor}</h4>
+				<div class="carCard ${carsJSON.cars[i].color}" id="car-${counter}">
+					<h2 class="car-title">${carsJSON.cars[i].make} ${carsJSON.cars[i].model}</h2>
+					<h3>Only $${carsJSON.cars[i].price}!</h3>
+					<h4>Year: ${carsJSON.cars[i].year}</h4>
+					<h4>Color: ${carsJSON.cars[i].color}</h4>
 					<h4>Availability: ${carStatus}</h4>
 					<p>Details: </p>
-					<p>${carInfo}</p>
+					<p>${carsJSON.cars[i].description}</p>
 				</div>
 			</div>
 		`;
 
-		// var wrapper = document.createElement('article');
-		// wrapper.innerHTML = carCard;
-		// var newAttr = document.createAttribute("id");
-		// newAttr.value = `carCard--${counter}`;
-		// wrapper.setAttributeNode(newAttr);
-		// topRow.appendChild(wrapper);
+		var newDiv = document.createElement('article');
+		newDiv.innerHTML = carCard;
+		var newAttr = document.createAttribute("id");
+		newAttr.value = `carCard--${counter}`;
+		console.log("newAttr", newAttr.value);
+		newDiv.setAttributeNode(newAttr);
+		topRow.appendChild(newDiv);
 
-		// wrapper.addEventListener('click', addClickBorder);
-	};
-
-	// function addClickBorder (event) {
-	// 	var clickedCard = event.currentTarget.id.split("-")[1];
-	// 	console.log("clickedCard", clickedCard);
-	// 	var cardToBorder = document.getElementById(`car-${clickedCard}`)
-	// 	console.log("cardToBorder", cardToBorder);
-	// 	cardToBorder.classList.toggle('borderThick');
+		newDiv.addEventListener('click', function () {
+			var removeHighlight = document.getElementsByClassName("carCard");
+			for (var i = 0; i < removeHighlight.length; i ++) {
+				removeHighlight[i].classList.remove('borderThick');
+			}
+			
+			var clickedCard = event.currentTarget.id.split("--")[1];
+			console.log("clickedCard", clickedCard);
+			var cardToBorder = document.getElementById(`car-${clickedCard}`)
+			console.log("cardToBorder", cardToBorder);
+			cardToBorder.classList.add('borderThick');
+		});
+		counter++;
+	}
 };
 
-
+// 
 var carRequest = new XMLHttpRequest();
 
 carRequest.addEventListener('load', executeCodeWhenCarsLoad);
