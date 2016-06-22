@@ -14,13 +14,11 @@ body {
 ----------Car Cards----
 ------------------------*/
 
-.top-row {
-	margin:;
-}
-
 .carCard {
-	margin-top: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	padding: 8px;
+	height: 306px;
 }
 
 .car-title {
