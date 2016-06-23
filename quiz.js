@@ -4,8 +4,9 @@ var carLot = (function (carStuff) {
 	var inputBox = document.getElementById('inputBox');
 	var submitBtn = document.getElementById('submitBtn');
 
+
 	var carInventory = [];
-	//loads inventory	
+		//loads inventory	
 	carStuff.loadInventory = function (callback) {
     var carRequest = new XMLHttpRequest();
     carRequest.open('GET', 'inventory.json');
@@ -44,19 +45,22 @@ var carLot = (function (carStuff) {
 					</div>
 				</div>
 			`;
+
 			// wrapper for each card
 			// appends each new card to the DOM
 			var newDiv = document.createElement('article');
 			newDiv.innerHTML = carCard;
 			var newAttr = document.createAttribute("id");
+			var newDivClass = document.createAttribute("class");
+			newDivClass.value = 'wrapper';
 			newAttr.value = `carCard--${counter}`;
 			newDiv.setAttributeNode(newAttr);
+			newDiv.setAttributeNode(newDivClass);
 			topRow.appendChild(newDiv);
-
-			newDiv.addEventListener('click', carStuff.beginEvents)
 			
 			counter++;
 		}
+		carStuff.activateEvents();
 	};
 
 	carStuff.loadInventory(carsToDOM);

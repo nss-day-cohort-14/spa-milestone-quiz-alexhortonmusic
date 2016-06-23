@@ -1,17 +1,23 @@
 var carLot = (function (carStuff) {
   //removes highlight from previously clicked card
-  function removeHighlight() {
+  carStuff.removeHighlight = function () {
     var removeHighlight = document.getElementsByClassName("carCard");
     for (var i = 0; i < removeHighlight.length; i ++) {
-      removeHighlight[i].classList.remove('borderThick');
+      removeHighlight[i].style.backgroundColor = "white";
+      removeHighlight[i].style.borderWidth = "1.5px";
     }
   };
 
+
+
     // adds background color and border to clicked card
-  function addBackgroundAndBorder (domEL, color) {
-    var clickedCard = event.currentTarget.id.split("--")[1];
+  carStuff.addBackgroundAndBorder = function (domEL, color) {
+    var clickedCard = domEL;
+    console.log("clickedCard", clickedCard);
     var cardToBorder = document.getElementById(`car-${clickedCard}`);
-    cardToBorder.classList.add('borderThick');
+    console.log(cardToBorder);
+    cardToBorder.style.borderWidth = "3px";
+    cardToBorder.style.backgroundColor = "lightblue";
   };
   return carStuff;
 })(carLot || {});
