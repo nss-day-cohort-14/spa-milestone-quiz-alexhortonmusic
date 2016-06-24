@@ -10,6 +10,7 @@ var carLot = (function (carStuff) {
 
   function clickHandler(event){
       var currentCar = event.currentTarget.id.split("--")[1];
+      currentCar;
       var colorEl = event.currentTarget;
       inputBox.value = "";
       inputBox.focus();
@@ -20,12 +21,14 @@ var carLot = (function (carStuff) {
 
   // clears input/puts cursor to inputBox
   function editDescription (carThing) {
-    var info = carThing;
-    var infoId = document.getElementById(`info-${info}`);
+    console.log("carThing", carThing);
+    carStuff.info = carThing;
+    carStuff.infoId = document.getElementById(`info-${carStuff.info}`);
     inputBox.addEventListener('keydown', function (event) {
       if (event.keyCode === 13) {
         event.preventDefault();
-        infoId.innerHTML = inputBox.value;
+        console.log("infoId", carStuff.infoId);
+        carStuff.infoId.innerHTML = inputBox.value;
       }
     });
   };

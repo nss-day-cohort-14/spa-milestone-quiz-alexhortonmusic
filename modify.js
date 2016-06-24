@@ -8,8 +8,6 @@ var carLot = (function (carStuff) {
     }
   };
 
-
-
     // adds background color and border to clicked card
   carStuff.addBackgroundAndBorder = function (domEL, color) {
     var clickedCard = domEL;
