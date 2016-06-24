@@ -22,13 +22,12 @@ var carLot = (function (carStuff) {
   // clears input/puts cursor to inputBox
   function editDescription (carThing) {
     console.log("carThing", carThing);
-    carStuff.info = carThing;
-    carStuff.infoId = document.getElementById(`info-${carStuff.info}`);
+    var infoId = document.getElementById(`info-${carThing}`);
     inputBox.addEventListener('keydown', function (event) {
       if (event.keyCode === 13) {
         event.preventDefault();
         console.log("infoId", carStuff.infoId);
-        carStuff.infoId.innerHTML = inputBox.value;
+        infoId.innerHTML = inputBox.value;
       }
     });
   };
