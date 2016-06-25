@@ -5,42 +5,33 @@ var carLot = (function (carStuff) {
     for (var i = 0; i < allCars.length; i++) {
       allCars[i].addEventListener('click', clickHandler);
     }
-    inputBox.addEventListener('keyup', editDescription);
+    inputBox.addEventListener('keydown', editDescription);
   };
-
+  var currentCar;
   function clickHandler(event){
-      var currentCar = event.currentTarget.id.split("--")[1];
-      currentCar;
+      currentCar = event.currentTarget.id.split("--")[1];
+      var infoIdThing = document.getElementById(`info-${currentCar}`);
+      console.log("infoIdThing", infoIdThing);
+      console.log("currentCar", currentCar);
       var colorEl = event.currentTarget;
       inputBox.value = "";
       inputBox.focus();
       carStuff.removeHighlight();
-      editDescription(currentCar);
       carStuff.addBackgroundAndBorder(currentCar, colorEl);
     };
 
   // clears input/puts cursor to inputBox
-  function editDescription (carThing) {
-    console.log("carThing", carThing);
-    var infoId = document.getElementById(`info-${carThing}`);
-    inputBox.addEventListener('keydown', function (event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        console.log("infoId", carStuff.infoId);
-        infoId.innerHTML = inputBox.value;
-      }
-    });
+  function editDescription () {
+    var infoId = document.getElementById(`info-${currentCar}`);
+    if (event.keyCode === 13) {
+    console.log("infoId", infoId);
+      event.preventDefault();
+      infoId.innerHTML = inputBox.value;
+    }
   };
   return carStuff;
 
 })(carLot || {});
 
 
-//calls all functions when box is clicked
-  // carStuff.activateEvents = function (event) {
-  //   var currentCar = event.currentTarget.id.split("--")[1];
-  //   var colorEl = event.currentTarget;
-  //   console.log("colorEl", colorEl);
-  //   carStuff.removeHighlight();
-  //   carStuff.addBackgroundAndBorder(currentCar, colorEl);
-  // };
+

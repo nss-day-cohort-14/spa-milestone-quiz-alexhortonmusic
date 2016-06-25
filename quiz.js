@@ -2,9 +2,6 @@ var carLot = (function (carStuff) {
 	//---------Elements to grab-----//
 	var topRow = document.getElementById('top-row');
 	var inputBox = document.getElementById('inputBox');
-	var info;
-	var infoID;
-
 
 	var carInventory = [];
 		//loads inventory	

@@ -11,9 +11,7 @@ var carLot = (function (carStuff) {
     // adds background color and border to clicked card
   carStuff.addBackgroundAndBorder = function (domEL, color) {
     var clickedCard = domEL;
-    console.log("clickedCard", clickedCard);
     var cardToBorder = document.getElementById(`car-${clickedCard}`);
-    console.log(cardToBorder);
     cardToBorder.style.borderWidth = "3px";
     cardToBorder.style.backgroundColor = "lightblue";
   };
