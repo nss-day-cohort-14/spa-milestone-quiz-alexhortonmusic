@@ -26,6 +26,8 @@ var carLot = (function (carStuff) {
     if (event.keyCode === 13) {
     console.log("infoId", infoId);
       event.preventDefault();
+      inputBox.value = '';
+    } else {
       infoId.innerHTML = inputBox.value;
     }
   };
